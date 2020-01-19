@@ -18,7 +18,7 @@ Write-Host "Clean up various directories"
     "$env:TEMP"
 ) | ForEach-Object {
     if (Test-Path $_) {
-        Write-Host "Removing $_"
+        Write-Host "Adding $_"
         try {
             Takeown /d Y /R /f $_
             Icacls $_ /GRANT:r administrators:F /T /c /q  2>&1 | Out-Null
